@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 const appRoutes: Routes = [
   { path: '',
     redirectTo: '/home',

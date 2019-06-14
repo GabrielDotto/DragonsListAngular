@@ -34,8 +34,11 @@ export class LoginComponent implements OnInit {
 
   fakeLogin(){
     if (this.senha.value == 'admin' && this.login.value === 'admin') {
-      window.sessionStorage.setItem('hadPermission', 'true');
-      this.route.navigateByUrl('/home')
+      sessionStorage.setItem('isLoggedIn', "true");
+      sessionStorage.setItem('token', 'talogadomesmo');
+      this.route.navigate(['/home']);
     }
+
+     //Retornar mensagem para usuário que falhou login
   }
 }
