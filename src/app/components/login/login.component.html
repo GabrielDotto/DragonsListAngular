@@ -1,3 +1,19 @@
-<p>
-  login works!
-</p>
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title> Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content-card">
+    <mat-form-field>
+      <input matInput placeholder="Login" maxlength="20" [formControl]="login">
+      <mat-error *ngIf="login.invalid">{{getErrorMessage('login')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'" [formControl]="senha">
+      <mat-error *ngIf="senha.invalid">{{getErrorMessage('senha')}}</mat-error>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions class="footer-card">
+      <button [disabled]="hasErrors()" mat-raised-button color="primary" (click)="fakeLogin()">Logar</button>
+  </mat-card-actions>
+</mat-card>
