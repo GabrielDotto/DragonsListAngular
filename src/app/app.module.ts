@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './components/login/login.component';
+import { MaterialModule } from './material.module';
 
 const appRoutes: Routes = [
   { path: '',
@@ -16,12 +18,14 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
