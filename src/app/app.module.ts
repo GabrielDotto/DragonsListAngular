@@ -9,21 +9,15 @@ import { LoginComponent } from './components/login/login.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './auth.guard';
 
-
-
-const appRoutes: Routes = [
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  // { path: '**', component: PageNotFoundComponent }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,
