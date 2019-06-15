@@ -1,0 +1,23 @@
+:host{
+    display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+
+    .table-dragons{ 
+        width: 100%;
+        border: 1px solid #2488D6;
+        border-radius: 10px;
+        margin-bottom: 2%;
+    }
+
+    table { 
+        width: 100%;
+    }
+
+    section {
+        display: flex;
+        flex: 1 1 100%;
+        padding: 2%;
+        flex-direction: column;
+    }
+}
