@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       console.log("DRAGONS", dragons);
       this.dragonsDataSource = new MatTableDataSource(dragons);
     }, err => {
-      this.snackBar.open("Parece que os dragrões não foram encontrados... :(")
+      this.snackBar.open("Parece que os dragrões não foram encontrados... :(", "OK")
     });
   }
 
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.dragonService.deleteDragon(selectedDragon.id.toString()).subscribe(x => {
       this.loadDragons()
     }, err => {
-      this.snackBar.open(`Erro ao tentar deletar o dragon ${selectedDragon.name}`);
+      this.snackBar.open(`Erro ao tentar deletar o dragon ${selectedDragon.name}`, "OK");
     })
   }
 

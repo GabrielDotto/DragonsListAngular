@@ -45,7 +45,7 @@ export class DragonDetailDialogComponent {
   }
 
   showSnackbar(mensagem: string) {
-    this.snackBar.open(mensagem);
+    this.snackBar.open(mensagem, "OK");
   }
 
   closeDialog(){

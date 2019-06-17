@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private snackBar: MatSnackBar) { }
   login = new FormControl('', [Validators.required]);
   senha = new FormControl('', [Validators.required]);
   public hide = true;
@@ -38,8 +39,8 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('isLoggedIn', "true");
       sessionStorage.setItem('token', 'talogadomesmo');
       this.route.navigate(['/home']);
+    }else {
+      this.snackBar.open("OPSSSS, parece que seu usuário e/ou senha estão incorretos... Aquela chave parece suspeita não ?", "OK");
     }
-
-     //Retornar mensagem para usuário que falhou login
   }
 }

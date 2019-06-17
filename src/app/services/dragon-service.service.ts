@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Http, Response} from '@angular/http';
-import { DragonModel } from '../models/dragon.model';
 
 const URL_BASE = "http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon"
 
