@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(private route: Router) { }
   login = new FormControl('', [Validators.required]);
   senha = new FormControl('', [Validators.required]);
+  public hide = true;
 
 
   ngOnInit() {

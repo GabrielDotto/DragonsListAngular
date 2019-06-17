@@ -29,15 +29,15 @@ export class DragonServiceService {
       );
   }
 
-  editDragon(dragon: DragonModel) {
-    const encodedURI = encodeURI(URL_BASE + `/${dragon.Id}`)
+  editDragon(dragon: any) {
+    const encodedURI = encodeURI(URL_BASE + `/${dragon.id}`)
     return this.http.put(encodedURI, dragon)
       .pipe(
         map((response: Response) => response.json())
       );
   }
 
-  createDragon(dragon: DragonModel) { 
+  createDragon(dragon: any) { 
     const encodedURI = encodeURI(URL_BASE)
     return this.http.post(encodedURI, dragon)
       .pipe(
@@ -46,7 +46,7 @@ export class DragonServiceService {
   }
 
   deleteDragon(id: string) {
-    const encodedURI = encodeURI(URL_BASE + `${id}`)
+    const encodedURI = encodeURI(URL_BASE + `/${id}`)
     return this.http.delete(encodedURI)
       .pipe(
         map((response: Response) => response.json())

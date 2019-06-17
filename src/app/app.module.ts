@@ -8,10 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth.guard';
 import { HttpModule } from '@angular/http';
+import { DragonDetailDialogComponent } from './components/dragon-detail-dialog/dragon-detail-dialog.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpModule } from '@angular/http';
     AppComponent,
     LoginComponent,
     HomeComponent,
+    DragonDetailDialogComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -27,9 +29,11 @@ import { HttpModule } from '@angular/http';
     MaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [],
+  entryComponents: [DragonDetailDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
