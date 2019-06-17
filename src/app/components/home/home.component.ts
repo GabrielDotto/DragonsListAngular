@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
     this.dragonService.getDragons().subscribe( (dragons: DragonModel[]) => { 
       console.log("DRAGONS", dragons);
       this.dragonsDataSource = new MatTableDataSource(dragons);
+    }, err => {
+      this.snackBar.open("Parece que os dragrões não foram encontrados... :(")
     });
   }
 
